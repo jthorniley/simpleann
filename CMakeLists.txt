@@ -3,7 +3,7 @@ project(simpleann)
 
 include_directories( "${PROJECT_SOURCE_DIR}/src" )
 
-add_subdirectory(tests)
+add_subdirectory(examples)
 
 SET( sources 
   src/simpleann.c
