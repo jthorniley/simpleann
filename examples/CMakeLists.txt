@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.8)
-project(simpleann)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT(simpleann)
 
-add_executable(basic basic.c)
-target_link_libraries(basic simpleann m)
+ADD_EXECUTABLE(basic basic.c)
+TARGET_LINK_LIBRARIES(basic simpleann m)

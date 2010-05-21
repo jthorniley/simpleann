@@ -1,14 +1,10 @@
-cmake_minimum_required(VERSION 2.8)
-project(simpleann)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT(simpleann)
 
-include_directories( "${PROJECT_SOURCE_DIR}/src" )
+OPTION( BUILD_SHARED_LIBS "Compile as shared library (rather than static)?" ON )
 
-add_subdirectory(examples)
+INCLUDE_DIRECTORIES( "${PROJECT_SOURCE_DIR}/src" )
 
-SET( sources 
-  src/simpleann.c
-)
-
-
-add_library(simpleann ${sources})
+ADD_SUBDIRECTORY(src/simpleann)
+ADD_SUBDIRECTORY(examples)
 
