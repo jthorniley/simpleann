@@ -16,7 +16,6 @@
  */
 void alloc_and_randomize( double **array, size_t length ) {
     int i;
-    double tmp;
 
     *array = calloc( length, sizeof( double ) );
     for ( i = 0; i < length; i++ ) {
