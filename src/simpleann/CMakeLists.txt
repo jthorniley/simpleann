@@ -6,6 +6,11 @@ SET( sources
   transfer.c
 )
 
+SET( headers
+  simpleann.h
+  transfer.h
+)
+
 ADD_LIBRARY(simpleann ${sources})
 
 SET_TARGET_PROPERTIES( simpleann  PROPERTIES
@@ -13,4 +18,5 @@ SET_TARGET_PROPERTIES( simpleann  PROPERTIES
   SOVERSION 1 )
 
 INSTALL( TARGETS simpleann DESTINATION lib )
+INSTALL( FILES ${headers} DESTINATION "include/simpleann" )
 

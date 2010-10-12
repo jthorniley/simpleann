@@ -41,7 +41,8 @@ void simple_net_new( simple_net *net, transfer tr, size_t num_layers, ... );
 
 /** Safely deallocate all the memory for the given network.
  *
- * Note that the network itself is not free'd, just everything within it,
+ * Note that the network itself is not free'd, just everything within it (i.e.
+ * everythinh allocated by simple_net_new),
  * it is up to the client to "free" the network since its the client that owns it.
  */
 void simple_net_free( simple_net *net );
@@ -59,6 +60,15 @@ void simple_net_free( simple_net *net );
 void simple_net_update( simple_net *net, double *inputs );
 
 void simple_net_print( simple_net *net );
+
+/**
+ * Return a pointer to the output neurons of this network.
+ *
+ * Note that this returns a pointer to elements inside the supplied
+ * network. Don't free the pointer that is returned (free the network
+ * itself if that is desired -- see simple_net_free )
+ */
+double *simple_net_get_outputs( simple_net *net );
 
 #endif /* SIMPLEANN_H */
 

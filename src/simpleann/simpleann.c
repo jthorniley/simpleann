@@ -27,7 +27,7 @@ void simple_net_new( simple_net *net, transfer tr, size_t num_layers, ... ) {
 
     for ( i = 0; i < num_layers; i++ ) {
 
-        size = va_arg( layer_size, int );
+        size = va_arg( layer_size, size_t );
 
         net->layer_sizes = realloc( net->layer_sizes, sizeof( size_t ) * (i+1) );
         net->layer_sizes[i] = size;
@@ -105,5 +105,10 @@ void simple_net_print( simple_net *net ) {
 
         printf( "\n" );
     }
+}
+
+double *simple_net_get_outputs( simple_net *net ) {
+
+    return net->neurons[net->num_layers-1];
 }
 
